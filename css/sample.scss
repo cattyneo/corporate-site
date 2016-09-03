@@ -52,10 +52,10 @@ header{
     position: absolute;
     top: 50px;
     right: 2%;
-    border: 1px solid #eee;
-    background: white;
     margin: 0;
     padding: 0;
+    border: 1px solid #eee;
+    background: white;
     display: none;// 通常は非表示
     z-index: 100;
 
@@ -95,17 +95,17 @@ header{
         padding: 0;
 
         a{
+          display: inline-block;
+          float: left;
+          padding-right: 10px;
+          padding-left: 50px;
           background-repeat: no-repeat;
           background-size: 40px 40px;
-          display: inline-block;
+          @include fontsize(14);
           line-height: 40px;
           color: #626262;
           text-decoration: none;
           font-weight: bold;
-          @include fontsize(14);
-          float: left;
-          padding-right: 10px;
-          padding-left: 50px;
         }
 
         a:hover{
@@ -168,9 +168,9 @@ header{
   text-align: center;
   padding: 80px 0;
   background-size: cover;
+  background-image: url("../images/top/cover.jpg");
 
   //retina_bg
-  background-image: url("../images/top/cover.jpg");
   @media screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx){
     background-image: url("../images/top/cover@2x.jpg");
   }
@@ -232,14 +232,14 @@ header{
  *--------------------------------------------------------*/
 
 #news_area{
-  background-color:$gray_blue;
+  background-color: $gray_blue;
 
   .news_title{
-    text-align: center;
+    padding: 15px 0 10px 0;
     @include fontsize(26);
     color: $blue1;
-    padding: 15px 0 10px 0;
     font-weight: bold;
+    text-align: center;
     letter-spacing: 0.2rem;
   }
 
@@ -311,14 +311,14 @@ footer{
         margin-bottom: 1px;
 
         a{
+          display: block;
+          padding: 16px 0;
           color:$blue1;
           background-color:$gray_blue;
-          display: block;
-          text-align: center;
-          font-weight: bold;
-          text-decoration: none;
           @include fontsize(16);
-          padding: 16px 0;
+          text-align: center;
+          text-decoration: none;
+          font-weight: bold;
         }
       }
     }
@@ -349,18 +349,18 @@ footer{
 
       li{
         list-style: none;
-
         display: inline-block;
         float: left;
         margin-right: 10px;
         @include fontsize(11);
 
-        background-repeat: no-repeat;
-        background-position: left center;
-        background-size: 4px 6px;
-
+        background: {
+          repeat: no-repeat;
+          position: left center;
+          size: 4px 6px;
+          image: url("../images/top/foot_arroehead.png");
+        }
         //retina_bg
-        background-image: url("../images/top/foot_arroehead.png");
         @media screen and (-webkit-min-device-pixel-ratio:2), (min-resolution: 2dppx){
           background-image: url("../images/top/foot_arroehead@2x.png");
         }
@@ -482,11 +482,13 @@ footer{
         padding: 10px 10px 10px 20px;
         border-bottom: 1px solid #e5e5e5;
 
+        background: {
+          repeat: no-repeat;
+          position: 8px center;
+          size: 4px 8px;
+          image: url("../images/news/side_arrow.png");
+        }
         // retina
-        background-repeat: no-repeat;
-        background-position: 8px center;
-        background-size: 4px 8px;
-        background-image: url("../images/news/side_arrow.png");
         @media screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx){
           background-image: url("../images/news/side_arrow@2x.png");
         }
